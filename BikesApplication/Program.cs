@@ -9,7 +9,7 @@ namespace BikesApplication
     class Program
     {
         // Declaring file path for input json file and output json file
-        private const string filePath = @"c:\users\admin\source\repos\BikesApplication\BikesApplication\App_Data\{0}";
+        private const string filePath = @"./../../App_Data/{0}";
 
         static void Main(string[] args)
         {
@@ -23,7 +23,7 @@ namespace BikesApplication
                     // Deserializing the data from JSON file
                     Garage[] garage = (Garage[])serializer.Deserialize(readfile, typeof(Garage[]));
 
-                    // Applying LINQ query to filter bike names and there counts (number of responses)
+                    // Applying LINQ query to filter bike names and their families counts (number of responses)
                     var result = garage.SelectMany(g => g.bikes)
                         .GroupBy(s => s) // Grouping by bike names
                         .Select(b => new { bikeName = b.Key, numberOfFamilies = b.Count() }) // Mapping bike name and counts relevant to the bike response
@@ -36,7 +36,7 @@ namespace BikesApplication
                     // Showing output on the console as Top Bike Names used by number of families
                     foreach (var item in result)
                     {
-                        Console.WriteLine("Name: {0}, Count: {1}", item.bikeName, item.numberOfFamilies);
+                        Console.WriteLine("Bike Name: {0}, Number of families: {1}", item.bikeName, item.numberOfFamilies);
                     }
                 }
             }
