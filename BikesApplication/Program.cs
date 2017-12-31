@@ -26,17 +26,17 @@ namespace BikesApplication
                     // Applying LINQ query to filter bike names and there counts (number of responses)
                     var result = garage.SelectMany(g => g.bikes)
                         .GroupBy(s => s) // Grouping by bike names
-                        .Select(b => new { bikeName = b.Key, totalResponses = b.Count() }) // Mapping bike name and counts relevant to the bike response
-                        .OrderByDescending(r => r.totalResponses) // Arranging in descending order i.e. The top responses first
+                        .Select(b => new { bikeName = b.Key, numberOfFamilies = b.Count() }) // Mapping bike name and counts relevant to the bike response
+                        .OrderByDescending(r => r.numberOfFamilies) // Arranging in descending order i.e. The top responses first
                         .Take(20); // Take only top 20 results
 
                     // Writing Output to a file "output.json"
                     File.WriteAllText(String.Format(filePath, "output.json"), JsonConvert.SerializeObject(result));
 
-                    // Showing output on the console
+                    // Showing output on the console as Top Bike Names used by number of families
                     foreach (var item in result)
                     {
-                        Console.WriteLine("Name: {0}, Count: {1}", item.bikeName, item.totalResponses);
+                        Console.WriteLine("Name: {0}, Count: {1}", item.bikeName, item.numberOfFamilies);
                     }
                 }
             }

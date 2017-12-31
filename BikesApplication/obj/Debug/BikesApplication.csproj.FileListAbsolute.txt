@@ -14,3 +14,4 @@ C:\Users\Admin\source\repos\BikesApplication\BikesApplication\bin\Debug\Newtonso
 C:\Users\Admin\source\repos\BikesApplication\BikesApplication\obj\Debug\BikesApplication.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\BikesApplication\BikesApplication\obj\Debug\BikesApplication.exe
 C:\Users\Admin\source\repos\BikesApplication\BikesApplication\obj\Debug\BikesApplication.pdb
+C:\Users\Admin\source\repos\BikesApplication\BikesApplication\obj\Debug\BikesApplication.csprojResolveAssemblyReference.cache
